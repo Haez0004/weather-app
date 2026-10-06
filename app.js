@@ -21,7 +21,8 @@ async function getWeather(city){
     document.getElementById("desc").textContent = data.weather[0].description;
     document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
     document.getElementById("wind").textContent = `Wind: ${data.wind.speed} m/s`;
-    
+
+
     localStorage.setItem("lastCity", city);
     result.classList.remove("hidden");
   }catch(err){
