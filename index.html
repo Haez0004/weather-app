@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Weather App</h2>
+    <div class="search">
+      <input id="cityInput" placeholder="Enter city e.g Kaduna">
+      <button id="searchBtn">Search</button>
+    </div>
+    <p id="loading"></p>
+    <p id="error"></p>
+    <div id="result" class="hidden">
+      <h1 id="city"></h1>
+      <h2 id="temp"></h2>
+      <p id="desc"></p>
+      <p id="humidity"></p>
+      <p id="wind"></p>
+    </div>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
