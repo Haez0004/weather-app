@@ -13,7 +13,7 @@ async function getWeather(city){
     result.classList.add("hidden");
 
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
-    if(!res.ok) throw new Error("City not found");
+    if(!res.ok){ const e = await res.json(); throw new Error(e.message); }
     const data = await res.json();
 
     document.getElementById("city").textContent = data.name;
