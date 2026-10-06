@@ -19,7 +19,7 @@ if(!city){ error.textContent = "Please enter a city"; return; }
 
     document.getElementById("city").textContent = data.name;
     document.getElementById("temp").textContent = `${Math.round(data.main.temp)}°C`;
-    document.getElementById("icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
     document.getElementById("desc").textContent = data.weather[0].description;
     document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
     document.getElementById("wind").textContent = `Wind: ${data.wind.speed} m/s`;
