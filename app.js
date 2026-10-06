@@ -26,6 +26,7 @@ if(!city){ error.textContent = "Please enter a city"; return; }
 
 
     localStorage.setItem("lastCity", city);
+    localStorage.setItem("lastWeather", JSON.stringify(data));
     result.classList.remove("hidden");
   }catch(err){
     error.textContent = err.message;
@@ -38,5 +39,15 @@ searchBtn.addEventListener("click", ()=> getWeather(cityInput.value.trim()));
 cityInput.addEventListener("keypress", (e)=> {if(e.key==="Enter") getWeather(cityInput.value.trim())});
 
 // load last searched
+const cached = JSON.parse(localStorage.getItem("lastWeather"));
 const last = localStorage.getItem("lastCity");
-if(last){ cityInput.value = last; getWeather(last); }
+if(!navigator.onLine && cached){
+  cityInput.value = cached.name;
+  document.getElementById("city").textContent = cached.name;
+  document.getElementById("temp").textContent = `${Math.round(cached.main.temp)}°C`;
+  document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + cached.weather[0].icon + "@2x.png";
+  document.getElementById("desc").textContent = cached.weather[0].description;
+  document.getElementById("humidity").textContent = `Humidity: ${cached.main.humidity}%`;
+  document.getElementById("wind").textContent = `Wind: ${cached.wind.speed} m/s`;
+  result.classList.remove("hidden");
+} else if(last){ cityInput.value = last; getWeather(last); }
