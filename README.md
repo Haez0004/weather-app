@@ -17,7 +17,7 @@ HTML / CSS / JavaScript / OpenWeatherMap API / PWA (manifest + sw.js)
 
 ### How to run
 1. Clone repo
-2. Add your API key in `app.js`: `const API_KEY = "5f95fec355ea0c30d03adba0bcc8bada"`
+2. Add your API key in `app.js`: `const API_KEY = "5f..........."`
 3. Open `index.html` or `https://haez0004.github.io/weather-app/`
 
 Built,  debugging, PWA setup all on phone.
